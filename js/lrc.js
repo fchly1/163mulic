@@ -47,8 +47,7 @@
 				$('#'+this.prefixid+'_nofound').hide();
 				/* 定时调用回调函数，监听歌曲进度 */
 				this.handle = setInterval('$.lrc.jump($.lrc.callback());', this.interval*1000);
-				var ttttt  = $.lrc.callback();
-				console.log(ttttt);
+
 			}else{ /* 没有歌词 */
 				$('#'+this.prefixid+'_list').hide();
 				$('#'+this.prefixid+'_nofound').show();
@@ -56,7 +55,7 @@
 		},
 		/* 跳到指定时间的歌词 */
 		jump: function(duration) {
-			console.log(duration);
+
 			if(typeof(this.handle) != 'number' || typeof(duration) != 'number' || !$.isArray(this.list) || this.list.length < 1) return this.stop();
  
 			if(duration < 0) duration = 0;

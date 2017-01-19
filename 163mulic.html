@@ -238,27 +238,7 @@
 		</div>
 		<script>
 		
-			function progressCtrl(){
-				this.progressSetInterval = setInterval(function(){
-					var $current = $('.time.jp-current-time').text().split(':');
-					var $duration = $('.oprBox .jp-duration').text().split(':');
-					var $durtime = ($duration[0] * 60) + Number($duration[1]);
-					var $currtime = ($current[0] * 60) + Number($current[1]);
-					var pect = ($currtime/$durtime*100).toFixed(2);
-					$('.played').css('width',pect + '%');
-					if(pect >= 100){
-						clearInterval(progressSetInterval);
-					}
-					
-				},30);
-			}
-			$('#play').click(function(){
-				
-				progressCtrl();
-			});
-			$('#pause').click(function(){
-				clearInterval(window.progressSetInterval);
-			});
+			
 			$('.close i').click(function(){
 				$('#jp_container_1').hide();
 				$('#jquery_jplayer_1').remove();
